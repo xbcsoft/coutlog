@@ -1,0 +1,8 @@
+﻿  Processing coutlog.cpp...
+  
+  Packing to D:\Develop\白菜Win32UI\VS-IDE本体插件\BEModSrc\coutlog\coutlog.bec ...
+  Cleaning up existing module directory: D:\Develop\白菜Win32UI\VS-IDE本体插件\BEModG\coutlog
+  Successfully installed to BEModG.
+  Done.
+  coutlog.cpp
+  coutlog.vcxproj -> D:\Develop\白菜Win32UI\VS-IDE本体插件\BEModSrc\coutlog\coutlog\Source\coutlog.exe

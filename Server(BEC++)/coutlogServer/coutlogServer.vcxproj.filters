@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="BEBuild">
+      <UniqueIdentifier>{ccaaaa6b-ef2e-4626-9649-5082585ad755}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="程序集">
+      <UniqueIdentifier>{7d02dc0e-e52c-4c29-be1c-d379c0edf469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{d69359df-ec44-47d4-930c-e0866618fb26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BEBuild\FB">
+      <UniqueIdentifier>{ab1ceef7-d21c-4f0f-bec2-372a05d0a1ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BEBuild\超级列表框扩展编辑">
+      <UniqueIdentifier>{4d56a751-f90a-4950-8441-a798cef66c45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BEBuild\BEWebCodec">
+      <UniqueIdentifier>{6d58306e-831e-48b6-a251-68e82fdd102a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BEBuild\信息框增强版">
+      <UniqueIdentifier>{f9aff626-c861-484d-9d3d-b91355d68a26}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="窗口\_\_启动窗口_.cpp">
+      <Filter>BEBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="窗口\_启动窗口.cpp">
+      <Filter>程序集</Filter>
+    </ClCompile>
+    <ClCompile Include="程序集1.cpp">
+      <Filter>程序集</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BEModG)\FB\FB.cpp">
+      <Filter>BEBuild\FB</Filter>
+    </ClCompile>
+    <ClCompile Include="BEMod\超级列表框扩展编辑\超级列表框扩展编辑.cpp">
+      <Filter>BEBuild\超级列表框扩展编辑</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BEModG)\BEWebCodec\BEWebCodec.cpp">
+      <Filter>BEBuild\BEWebCodec</Filter>
+    </ClCompile>
+    <ClCompile Include="HTTP服务器.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BEMod\信息框增强版\信息框增强版.cpp">
+      <Filter>BEBuild\信息框增强版</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BEMod\BEMod.h">
+      <Filter>BEBuild</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="coutlogServer.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+</Project>
