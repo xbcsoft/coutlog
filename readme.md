@@ -95,7 +95,11 @@ coutlogServer/
 
 ### C++ 客户端
 
-C++ 客户端提供了高度封装的头文件 [coutlog.h](file:///Client/C++/coutlog/coutlog.h) 及源文件 [coutlog.cpp](file:///Client/C++/coutlog/coutlog.cpp)。
+头文件 [coutlog.h](file:///Client/C++/coutlog/coutlog.h) 及源文件 [coutlog.cpp](file:///Client/C++/coutlog/coutlog.cpp) 依赖白易基础库，
+
+参考：https://github.com/xbcsoft/BE-BaseLibrary
+
+
 
 #### 1. 配置调试目标 `coutlog_option`
 ```cpp
