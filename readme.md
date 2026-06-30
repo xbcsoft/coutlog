@@ -152,7 +152,7 @@ void coutClear();
 ## 🚀 快速开始
 
 ### 1. 运行服务端
-打开 `Server(BEC++)\coutlogServer.sln` 进行编译运行。运行后将在本地监听端口 `10086`。
+打开 `Server(BEC++)\Release\coutlogServer.exe  `运行后将在本地监听端口10086。
 - 可勾选“自动滚动”、“自动换行”，或在此处修改即时监听的端口。
 
 ### 2. 在 C++ 项目中接入
@@ -190,3 +190,4 @@ int main() {
 1. 将 `Client/E/支持库/coutlog.fne` 复制到易语言安装目录下的 `lib` 目录中。
 2. 将 `coutlog_static(NOP).lib`、`coutlog_static(YES).lib`、`coutlog_static.lib` 复制到易语言安装目录下的 `static_lib` 目录中。
 3. 重启易语言，勾选“白易远程控制台日志输出”支持库，即可在代码中直接使用调试输出命令。
+
