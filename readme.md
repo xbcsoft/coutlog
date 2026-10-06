@@ -166,7 +166,13 @@ void coutClear();
 - 可勾选“自动滚动”、“自动换行”，或在此处修改即时监听的端口。
 
 ### 2. 在 C++ 项目中接入
-在您的 C++ 工程中引入 `coutlog.h` 和 `coutlog.cpp`，示例如下：
+在您的 C++ 工程中引入 `coutlog.h` 和 `coutlog.cpp`，
+
+**注意：自从0.7开始——需要在项目级加入DBG=1的宏(白易启动器新建的项目Debug模式下默认已配置该宏)，方可激活cout系列函数**
+
+
+
+示例如下：
 
 ```cpp
 #include "coutlog.h"
@@ -183,8 +189,11 @@ int main() {
 
     // 4. 打印各种不同类型到日志（参考白易0.6+中的__AuroStr__设计可自定义任何类型）
     coutlogV("Value of PI is roughly ", 3.14159, " and status is: ", true);
+    
+    // 5. 打印二进制数据
+    coutlogR({1,2,3}, false, "log");
 
-    // 5. 发送日志并接收回执 (当前线程会挂起，等待服务端输入并返回)
+    // 6. 发送日志并接收回执 (当前线程会挂起，等待服务端输入并返回)
     StrA reply = coutlog("Breakpoint hit! Continue? [yes/no]", true);
     if (reply == "yes") {
         coutlog("Client resumed and continuing...");
