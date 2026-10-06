@@ -1,19 +1,14 @@
 ﻿#include <BEWin32UI/runtime.h>
 
-int CALLBACK wWinMain(HINSTANCE hInstance, HINSTANCE hPrev,
-	LPTSTR lpCmdLine, int nCmdShow)
+int main(int nCShow = SW_SHOWNORMAL, char** argVec = nullptr)
 {
-	全局初始化配置(hInstance, true);
-	_启动窗口.初显(nCmdShow).载入();
-
-	return Win32消息循环();
-}
-
-#ifdef _CWinDbg
-int main() //窗口程序调试使用cw_printf,cw_print(条件空定义)
-{ //#define cw_printf printf 、#define cw_print be::print
 	全局初始化配置(GetModuleHandle(0), true);
-	_启动窗口.初显(1).载入();
+	
+	_启动窗口.初显(nCShow).载入();
 	return Win32消息循环();
 }
-#endif
+
+int WINAPI wWinMain(HINSTANCE, HINSTANCE, LPTSTR, int nCShow)
+{
+	return main(nCShow);
+}

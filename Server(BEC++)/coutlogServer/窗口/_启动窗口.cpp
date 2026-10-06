@@ -47,7 +47,7 @@ struct __启动窗口 : 窗口
 		DwmExtendFrameIntoClientArea(窗口句柄, &margins);
 
 		// 强制刷新窗口框架
-		SetWindowPos(窗口句柄, NULL, 0, 0, 0, 0, SWP_SHOWWINDOW|SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
+		SetWindowPos(窗口句柄, NULL, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
 	}
 
 	void _重启HTTP服务()
@@ -67,28 +67,8 @@ struct __启动窗口 : 窗口
 
 	void 事件_尺寸被改变()
 	{
-		SIZEF sz = 取用户区大小();
-		int w = sz.cx, h = sz.cy;
-		int y = h - 26;
-
-		// 其他子控件顺延 33 像素（标题栏 28px + 5px 边距）
-		int contentY = 28 + 5;
-		int contentH = h - contentY - 30; // 底部留出 35 像素用于其他控制按钮
-
-		编辑框log.移动(10, contentY, w - 19, contentH);
-		超级列表框1.移动(10, contentY, 编辑框log.宽度, 编辑框log.高度);
-
 		int w0 = 超级列表框1.取列宽(0);
-		超级列表框1.置列宽(1, w - 20 - w0 - 25);
-		图片框1.移动(10, y-1, 24, 24);
-		按钮_长窗口.移动(40, y, 52, 24);
-		按钮_切列表.移动(98, y, 52, 24);
-		标签1.移动(156, y+1, 24, 24);
-		超级链接框1.移动(235, y+1, 80, 24);
-		编辑框_端口.移动(184, y, 45, 24);
-		选择框2.移动(w - 218, y, 72, 24);
-		选择框1.移动(w - 142, y, 72, 24);
-		按钮_清空.移动(w - 67, y, 52, 24);
+		超级列表框1.置列宽(1, 超级列表框1.宽度 - w0 - 25);
 	}
 
 	子菜单 popupMenu;
@@ -496,7 +476,7 @@ struct __启动窗口 : 窗口
 			}
 			信息框_DIY({}, "　　　　　　↑本软件开源仓库↑\r\n交流QQ群：668536886（白易语言研究院）", 0, "由白易开发支持(xbcsoft)", [](HWND hwnd) {
 				超链.窗口置父(hwnd);
-				超链.移动(10, 10, 300, 30);
+				超链.移动(10, 10, 300, 18);
 			});
 		} else if (菜单ID == ID_40003) {
 			销毁();
@@ -509,9 +489,10 @@ struct __启动窗口 : 窗口
 	}
 
 #pragma region 组件成员
-	编辑框 编辑框log;
+	struct : 编辑框 {
+	} 编辑框log;
 
-	struct _超级列表框1 : 超级列表框 {
+	struct : 超级列表框 {
 		void 事件_右键单击表项() {
 			int row = 现行选中项;
 			if (row == -1) return;
@@ -532,14 +513,14 @@ struct __启动窗口 : 窗口
 		}
 	} 超级列表框1;
 
-	struct _按钮1 : 按钮 {
+	struct : 按钮 {
 		void 事件_被单击() {
 			_启动窗口.编辑框log.内容_(L"");
 			_启动窗口.超级列表框1.全部删除();
 		}
 	} 按钮_清空;
 
-	struct _按钮2 : 按钮 {
+	struct : 按钮 {
 		void 事件_被单击() {
 			RECTF rc = _启动窗口.取窗口矩形();
 			int height = rc.bottom - rc.top;
@@ -553,7 +534,7 @@ struct __启动窗口 : 窗口
 		}
 	} 按钮_长窗口;
 
-	struct _按钮4 : 按钮 {
+	struct : 按钮 {
 		void 事件_被单击() {
 			if (_启动窗口.超级列表框1.可视) {
 				_启动窗口.超级列表框1.可视_(false);
@@ -567,7 +548,7 @@ struct __启动窗口 : 窗口
 		}
 	} 按钮_切列表;
 
-	struct _图片框1 : 图片框 {
+	struct : 图片框 {
 		HandleCURSOR m_hDragCursor;
 
 		bool 通用事件_鼠标左键被按下(int x, int y) {
@@ -600,7 +581,7 @@ struct __启动窗口 : 窗口
 				窗口基类 targetWin;
 				targetWin.窗口句柄 = hwndTarget;
 				RectS a = targetWin.取窗口大小版矩形();
-				targetWin.窗口句柄 = NULL; // 释放句柄避免析构时销毁目标窗口
+				targetWin.窗口句柄 = NULL;
 
 				_启动窗口.移动(a.x - 6, a.y, a.w + 6, a.h, true);
 			}
@@ -608,15 +589,16 @@ struct __启动窗口 : 窗口
 		}
 	} 图片框1;
 
-	标签 标签1;
+	struct : 标签 {
+	} 标签1;
 
-	struct _编辑框_端口 : 编辑框 {
+	struct : 编辑框 {
 		void 事件_内容被改变() {
 			_启动窗口._重启HTTP服务();
 		}
-	}编辑框_端口;
+	} 编辑框_端口;
 
-	struct _超级链接框1 : 超级链接框 {
+	struct : 超级链接框 {
 		bool 通用事件_鼠标左键被按下(int x, int y) {
 			StrW portDir = _启动窗口.g_模块目录 + _启动窗口.编辑框_端口._取内容();
 			创建目录(portDir);
@@ -625,17 +607,24 @@ struct __启动窗口 : 窗口
 		}
 	} 超级链接框1;
 
-	struct _选择框1 : 选择框 {
+	struct : 选择框 {
 		void 事件_被单击() {
 			_启动窗口.编辑框log.滚动条_(_启动窗口.选择框1._取选中() ? 编辑框滚动条::纵向滚动条 : 编辑框滚动条::横向及纵向滚动条);
 		}
 	} 选择框1;
 
-	struct _选择框2 : 选择框 {
+	struct : 选择框 {
 	} 选择框2;
 
-	编辑框 编辑框_cl;
+	struct : 编辑框 {
+	} 编辑框_cl;
 
+	struct : 网格布局 {
+	} _网格_窗口;
+	struct : 外形框 {
+	}外形框_左;
+	struct : 外形框 {
+	}外形框_右;
 #pragma endregion
 	HTTP原始报服务器 http;
 	StrA HTTP业务逻辑(int dwConnID, HTTP键值对& GET参数, c_Bytes POST数据);

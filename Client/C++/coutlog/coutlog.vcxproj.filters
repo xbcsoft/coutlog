@@ -14,22 +14,22 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="BEBuild">
-      <UniqueIdentifier>{73ebdf13-7ee0-4bed-87a7-d1bba49a342e}</UniqueIdentifier>
+      <UniqueIdentifier>{babd344e-c4c2-4e05-acd7-a27b26763179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BEBuild\coutlog">
+      <UniqueIdentifier>{b5e7d23e-dd80-4c9a-b42e-2f6a32e8c50b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="coutlog.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="$(BEModG)\coutlog\coutlog.cpp">
+      <Filter>BEBuild\coutlog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="coutlog.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="BEMod\BEMod.h">

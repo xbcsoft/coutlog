@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<窗口 be_version="1.0" be_rect="50,50,568,196" 标题="CoutlogServer" 边框="3" 最小化按钮="true" 位置="1" 总在最前="true" be_grid_row="1-24px" be_grid_col="310px-1" be_grid_padding="10,33,10,6" be_grid_gap="6,6">
+  <外形框 be_name="外形框_右" be_rect="332,166,208,24" be_lay="1,1,1,1" be_halign="3" 外形="0" 线型="-1" be_valign="0" be_margin="0,0,0,0">
+    <选择框 be_name="选择框2" be_rect="0,0,72,24" 标题="自动滚动" 选中="true" />
+    <选择框 be_name="选择框1" be_rect="78,0,72,24" 标题="自动换行" />
+    <按钮 be_name="按钮_清空" be_rect="156,0,52,24" 标题="清空" />
+  </外形框>
+  <编辑框 be_name="编辑框log" be_rect="10,33,530,127" be_lay="0,0,1,2" 是否允许多行="true" 滚动条="3" be_halign="0" be_valign="0" be_margin="0,0,0,0" />
+  <超级列表框 be_name="超级列表框1" be_rect="10,33,530,127" be_lay="0,0,1,2" 可视="false" be_halign="0" be_valign="0" be_margin="0,0,0,0" />
+  <编辑框 be_name="编辑框_cl" be_rect="0,0,0,0" 可视="false" />
+  <外形框 be_name="外形框_左" be_rect="10,166,316,24" be_lay="1,0,1,1" 外形="0" 线型="-1" 背景颜色="-1" be_halign="0" be_valign="0" be_margin="0,0,0,0">
+    <图片框 be_name="图片框1" be_rect="0,0,24,24" 显示方式="1" />
+    <按钮 be_name="按钮_长窗口" be_rect="30,0,52,24" 标题="长窗口" />
+    <按钮 be_name="按钮_切列表" be_rect="88,0,52,24" 标题="切列表" />
+    <标签 be_name="标签1" be_rect="146,0,28,24" 标题="端口" />
+    <编辑框 be_name="编辑框_端口" be_rect="180,0,45,24" 内容="10086" />
+    <超级链接框 be_name="超级链接框1" be_rect="231,1.5,70,24" 标题="接收文件目录" 文本颜色="6316128" 背景颜色="15790320" />
+  </外形框>
+</窗口>

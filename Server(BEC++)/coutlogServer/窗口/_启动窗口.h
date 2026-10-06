@@ -35,25 +35,26 @@ struct __启动窗口 : 窗口
 	void 事件_首次激活();
 
 #pragma region 组件成员
-	编辑框 编辑框log;
+	struct : 编辑框 {
+	} 编辑框log;
 
-	struct _超级列表框1 : 超级列表框 {
+	struct : 超级列表框 {
 		void 事件_右键单击表项();
 	} 超级列表框1;
 
-	struct _按钮1 : 按钮 {
+	struct : 按钮 {
 		void 事件_被单击();
 	} 按钮_清空;
 
-	struct _按钮2 : 按钮 {
+	struct : 按钮 {
 		void 事件_被单击();
 	} 按钮_长窗口;
 
-	struct _按钮4 : 按钮 {
+	struct : 按钮 {
 		void 事件_被单击();
 	} 按钮_切列表;
 
-	struct _图片框1 : 图片框 {
+	struct : 图片框 {
 		HandleCURSOR m_hDragCursor;
 
 		bool 通用事件_鼠标左键被按下(int x, int y);
@@ -61,25 +62,33 @@ struct __启动窗口 : 窗口
 		bool 通用事件_鼠标左键被放开(int x, int y);
 	} 图片框1;
 
-	标签 标签1;
+	struct : 标签 {
+	} 标签1;
 
-	struct _编辑框_端口 : 编辑框 {
+	struct : 编辑框 {
 		void 事件_内容被改变();
-	}编辑框_端口;
+	} 编辑框_端口;
 
-	struct _超级链接框1 : 超级链接框 {
+	struct : 超级链接框 {
 		bool 通用事件_鼠标左键被按下(int x, int y);
 	} 超级链接框1;
 
-	struct _选择框1 : 选择框 {
+	struct : 选择框 {
 		void 事件_被单击();
 	} 选择框1;
 
-	struct _选择框2 : 选择框 {
+	struct : 选择框 {
 	} 选择框2;
 
-	编辑框 编辑框_cl;
+	struct : 编辑框 {
+	} 编辑框_cl;
 
+	struct : 网格布局 {
+	} _网格_窗口;
+	struct : 外形框 {
+	}外形框_左;
+	struct : 外形框 {
+	}外形框_右;
 #pragma endregion
 	HTTP原始报服务器 http;
 	StrA HTTP业务逻辑(int dwConnID, HTTP键值对& GET参数, c_Bytes POST数据);
